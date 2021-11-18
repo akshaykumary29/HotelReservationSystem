@@ -9,13 +9,15 @@ public class Hotel {
     public Hotel() {
     }
 
-    public Hotel(String hotelNumber, String hotelName, int weekDayRates, int weekendDayRates) {
-        this.hotelName = hotelName;
-        this.hotelNumber = hotelNumber;
-        this.weekDayRates = weekDayRates;
-        this.WeekendDayRates = weekendDayRates;
-    }
+//    //Contructer
+//    public Hotel(String hotelNumber, String hotelName, int weekDayRates, int weekendDayRates) {
+//        this.hotelName = hotelName;
+//        this.hotelNumber = hotelNumber;
+//        this.weekDayRates = weekDayRates;
+//        this.WeekendDayRates = weekendDayRates;
+//    }
 
+    //getter and setter Method
     public String getHotelName() {
         return hotelName;
     }
@@ -48,4 +50,13 @@ public class Hotel {
         WeekendDayRates = weekendDayRates;
     }
 
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "hotelName='" + hotelName + '\'' +
+                ", hotelNumber='" + hotelNumber + '\'' +
+                ", weekDayRates=" + weekDayRates +
+                ", WeekendDayRates=" + WeekendDayRates +
+                '}';
+    }
 }
