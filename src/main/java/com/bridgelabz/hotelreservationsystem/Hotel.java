@@ -4,15 +4,17 @@ public class Hotel {
     private String hotelName;
     private long weekDayRegularCustomerRate;
     private long weekendDayRegularCustomerRate;
+    private int rate;
 
     public Hotel() {
     }
 
     //Contructer
-    public Hotel(String hotelName, long weekDayRegularCustomerRate, long weekendDayRegularCustomerRate) {
+    public Hotel(String hotelName, long weekDayRegularCustomerRate, long weekendDayRegularCustomerRate, int rate) {
         this.hotelName = hotelName;
         this.weekDayRegularCustomerRate = weekDayRegularCustomerRate;
         this.weekendDayRegularCustomerRate = weekendDayRegularCustomerRate;
+        this.rate = rate;
     }
 
     // getter and setter
@@ -38,6 +40,14 @@ public class Hotel {
 
     public void setWeekendDayRegularCustomerRate(long weekendDayRegularCustomerRate) {
         this.weekendDayRegularCustomerRate = weekendDayRegularCustomerRate;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 
     @Override
