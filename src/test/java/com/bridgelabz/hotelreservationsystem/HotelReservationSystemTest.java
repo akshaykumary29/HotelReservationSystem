@@ -7,6 +7,7 @@ import org.junit.Test;
  * Test To Enter data are correct or not
  */
 public class HotelReservationSystemTest {
+
     @Test
     public void givenHotelDetails_WhenValuesEnteredAreCorrect_ShouldReturnTrue() {
         HotelReservation hotelReservation = new HotelReservation();

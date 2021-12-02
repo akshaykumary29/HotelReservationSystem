@@ -1,6 +1,10 @@
 package com.bridgelabz.hotelreservationsystem;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Optional;
 
 /**
  * Hotel Reservatiion System
@@ -15,26 +19,36 @@ public class HotelReservation implements HotelReservationIF {
     Hotel hotel;
 
     /**
-     *
-     * @param hotelNumber
      * @param hotelName
-     * @param weekDayRates
-     * @param weekedDayRates
-     * @return
+     * @param regularCustomerRate
      */
-    public boolean addHotel(String hotelNumber, String hotelName, int weekDayRates, int weekedDayRates) {
+    public void addHotel(String hotelName, long regularCustomerRate) {
         hotel = new Hotel();
-        hotel.setHotelNumber(hotelNumber);
         hotel.setHotelName(hotelName);
-        hotel.setWeekDayRates(weekDayRates);
-        hotel.setWeekendDayRates(weekedDayRates);
+        hotel.setRegularCustomerCost(regularCustomerRate);
         hotelList.add(hotel);
         System.out.println("Successfully Added.");
-        return true;
     }
 
+    public int getHotelListSize() {
+        return hotelList.size();
+    }
+
+    public void printHotelList() {
+        for (Hotel list : hotelList) {
+            System.out.println("\tHotel Details: " + list.getHotelName()
+                    + "\t\tRates per regular Customer: " + list.getRegularCustomerCost() + "$");
+        }
+    }
+
+    @Override
     public ArrayList<Hotel> getHotelList() {
         return hotelList;
     }
 
+    public Hotel getCheapestHotel(LocalDate startDate, LocalDate endDate) {
+        long numOfDays = ChronoUnit.DAYS.between(startDate, endDate);
+        Optional<Hotel> sortedHotelList = hotelList.stream().min(Comparator.comparing(Hotel::getRegularCustomerCost));
+        return sortedHotelList.get();
+    }
 }

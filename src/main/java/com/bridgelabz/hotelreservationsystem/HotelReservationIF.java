@@ -3,9 +3,11 @@ package com.bridgelabz.hotelreservationsystem;
 import java.util.ArrayList;
 
 public interface HotelReservationIF {
-    public boolean addHotel(String hotelNumber, String hotelName, int weekDayRates, int weekedDayRates);
+    public void addHotel(String hotelName, long regularCustomerRate);
+
+    public int getHotelListSize();
+
+    public void printHotelList();
 
     public ArrayList<Hotel> getHotelList();
-
-
 }
