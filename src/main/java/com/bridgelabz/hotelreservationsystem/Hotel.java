@@ -2,18 +2,20 @@ package com.bridgelabz.hotelreservationsystem;
 
 public class Hotel {
     private String hotelName;
-    private long regularCustomerCost;
+    private long weekDayRegularCustomerRate;
+    private long weekendDayRegularCustomerRate;
 
     public Hotel() {
     }
 
     //Contructer
-    public Hotel(String hotelName, long regularCustomerCost) {
+    public Hotel(String hotelName, long weekDayRegularCustomerRate, long weekendDayRegularCustomerRate) {
         this.hotelName = hotelName;
-        this.regularCustomerCost = regularCustomerCost;
+        this.weekDayRegularCustomerRate = weekDayRegularCustomerRate;
+        this.weekendDayRegularCustomerRate = weekendDayRegularCustomerRate;
     }
 
-    //getter and setter Method
+    // getter and setter
     public String getHotelName() {
         return hotelName;
     }
@@ -22,19 +24,28 @@ public class Hotel {
         this.hotelName = hotelName;
     }
 
-    public long getRegularCustomerCost() {
-        return regularCustomerCost;
+    public long getWeekDayRegularCustomerRate() {
+        return weekDayRegularCustomerRate;
     }
 
-    public void setRegularCustomerCost(long regularCustomerCost) {
-        this.regularCustomerCost = regularCustomerCost;
+    public void setWeekDayRegularCustomerRate(long weekDayRegularCustomerRate) {
+        this.weekDayRegularCustomerRate = weekDayRegularCustomerRate;
+    }
+
+    public long getWeekendDayRegularCustomerRate() {
+        return weekendDayRegularCustomerRate;
+    }
+
+    public void setWeekendDayRegularCustomerRate(long weekendDayRegularCustomerRate) {
+        this.weekendDayRegularCustomerRate = weekendDayRegularCustomerRate;
     }
 
     @Override
     public String toString() {
         return "Hotel{" +
                 "hotelName='" + hotelName + '\'' +
-                ", regularCustomerCost=" + regularCustomerCost +
+                ", weekDayRegularCustomerRate=" + weekDayRegularCustomerRate +
+                ", weekendDayRegularCustomerRate=" + weekendDayRegularCustomerRate +
                 '}';
     }
 }
